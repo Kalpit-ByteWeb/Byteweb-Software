@@ -21,25 +21,34 @@ export default {
         'heading-gradient-color' : 'linear-gradient(90deg, #00AC91 0%, #10B2DA 50.6%, #F63767 100%)',
       },
       boxShadow: {
-        'button-box-shadow': '0px 2px 8px 0px rgba(255, 255, 255, 0.1)',  // Custom light shadow
-        'button-box-shadow-2': 'box-shadow: 0px 2px 8px 0px rgba(48, 44, 255, 0.1)',
-
+        'button-box-shadow': '0px 2px 8px 0px rgba(255, 255, 255, 0.1)',
+        'button-box-shadow-2': '0px 2px 8px 0px rgba(48, 44, 255, 0.1)',
+        'feature-box': '0px 0px 4px 0px rgba(0, 123, 255, 0.05)',
       },
       lineHeight: {
         '80': '5rem', // Add a custom line height
-      },
-      fontSize:{
-        'banner-heading-size' : '3.75rem',
+        '50': '3.125rem',
       },
       padding:{
         '88':'5.5rem',
       },
       
     },
+    fontFamily: {
+      heading: ['Domine', 'serif'], // Heading font
+      body: ['Open Sans', 'sans-serif'], // Body font
+    },
     container: {
       screens: {
         DEFAULT: '1440px', // Set default container size to 1440px
       },
+    
+  },
+  fontSize: {
+    sm: '1rem',
+    lg:'1.5rem',
+    base: '2.5rem',
+    xl: '3.75rem',
   },
   plugins: [],
 } 

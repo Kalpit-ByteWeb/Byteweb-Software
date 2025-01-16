@@ -1,19 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Button from "../components/Button"
-
-const data = await fetch("http://127.0.0.1:1337/api/pages?sort=createdAt:asc")
-
-const response = await data.json()
-console.log(response)
 
 const NavBar = () => {
-    const pages = response.data.sort((a, b) => {
-        // Ensure the home page (Slug === null) is always first
-        if (a.Slug === null) return -1;
-        if (b.Slug === null) return 1;
-        return 0;
-      });
   return (
     <header className="text-gray-600 body-font bg-byteweb-software-gradient">
     <div className="container mx-auto flex flex-wrap py-4 flex-col md:flex-row items-center">
@@ -24,20 +12,17 @@ const NavBar = () => {
         </div>
         <div className="container flex-1">
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      {pages.map((data) => {
-        const slug = data.Slug || "";
-        const href = slug === "" ? "/" : `/${slug}`;
 
-        return (
-          <Link key={data.id} href={href} className="mr-5 text-white">
-            {data.PagesNames}
-          </Link>
-        );
-      })}
+          <Link href="/" className="font-heading text-sm mr-5 text-white">Home</Link>
+          <Link href="/product" className="font-heading text-sm mr-5 text-white">Product</Link>
+          <Link href="/services" className="font-heading text-sm mr-5 text-white">Services</Link>
+          <Link href="/about-us" className="font-heading text-sm mr-5 text-white">About-Us</Link>
+          <Link href="/blog" className="font-heading text-sm mr-5 text-white">Blog</Link>
+        
     </nav>
         </div>
         <div className="container flex-1 text-right">
-            <Link href="/contact-us" className="py-3.5 px-5 text-white font-semibold rounded-lg shadow-button-box-shadow bg-buttonbackground">Contact us</Link>
+            <Link href="/contact-us" className="font-heading py-3.5 px-5 text-white font-semibold rounded-lg shadow-button-box-shadow bg-buttonbackground">Contact us</Link>
         </div>
         </div>
 
